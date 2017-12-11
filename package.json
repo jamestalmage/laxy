@@ -1,0 +1,39 @@
+{
+	"name": "laxy",
+	"version": "0.0.0",
+	"description": "Proxies for lazy loading expensive objects.",
+	"license": "MIT",
+	"repository": "jamestalmage/laxy",
+	"author": {
+		"name": "James Talmage",
+		"email": "james@talmage.io",
+		"url": "github.com/jamestalmage"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && nyc ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		""
+	],
+	"dependencies": {
+		"lazy-singleton": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "^0.20.0",
+		"codecov": "^2.2.0",
+		"nyc": "^11.0.0",
+		"xo": "^0.18.2"
+	},
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text"
+		]
+	}
+}
