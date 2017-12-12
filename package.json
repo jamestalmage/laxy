@@ -1,6 +1,6 @@
 {
 	"name": "laxy",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Proxies for lazy loading expensive objects.",
 	"license": "MIT",
 	"repository": "jamestalmage/laxy",
