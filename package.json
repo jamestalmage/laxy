@@ -19,7 +19,9 @@
 		"index.js"
 	],
 	"keywords": [
-		""
+		"proxy",
+		"lazy",
+		"proxies"
 	],
 	"dependencies": {
 		"lazy-singleton": "^1.0.0"

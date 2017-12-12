@@ -1,6 +1,6 @@
 # laxy [![Build Status](https://travis-ci.org/jamestalmage/laxy.svg?branch=master)](https://travis-ci.org/jamestalmage/laxy) [![codecov](https://codecov.io/gh/jamestalmage/laxy/badge.svg?branch=master)](https://codecov.io/gh/jamestalmage/laxy?branch=master)
 
-> Proxies for lazy loading expensive objects.
+> Proxies for lazy loading expensive objects. Lazy + Proxy === Laxy
 
 
 ## Install
