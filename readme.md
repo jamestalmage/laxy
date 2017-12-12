@@ -61,13 +61,12 @@ The Javscript Proxying API sets a few things in stone at the time of Proxy creat
   
   * `laxy.class(fn)(...args)` - While all the other hints suggest what the *return type* of your generator function will be. The `class` hint declares that your generator function *is* a class function, and should be invoked with `new`. This should not be confused to mean your generator will return a class function (in that case, use `func`);
 
-|           |               |           |  invocable  |
-|   Hint    | `typeof proxy`| invocable |  with `new` |  Caveats
-|-----------|:-------------:|:---------:|:-----------:|----------------------------------------------------
-| `obj`     |  `'object'`   |    No     |     No      |
-| `func`    |  `'function'` |    Yes    |     Yes     | `prototype` member is enforced and non-configurable
-| `arrow`   |  `'function'` |    Yes    |     No      |  Avoids `prototype` issue, but can't be invoked with `new`.
-| `class` * |  `'object'`   |    No     |     No      |  Causes your *generator function* to be invoked with `new`.
+|   Hint    | `typeof proxy` | invocable |  with `new` |  Caveats                                                     |
+|-----------|:--------------:|:---------:|:-----------:|--------------------------------------------------------------|
+| `obj`     |  `'object'`    |    No     |     No      |                                                              |
+| `func`    |  `'function'`  |    Yes    |     Yes     | `prototype` member is enforced and non-configurable          |
+| `arrow`   |  `'function'`  |    Yes    |     No      |  Avoids `prototype` issue, but can't be invoked with `new`.  |
+| `class` * |  `'object'`    |    No     |     No      |  Causes your *generator function* to be invoked with `new`.  |
 
 
 ## Revocable Proxies
