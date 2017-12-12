@@ -54,21 +54,21 @@ The Javscript Proxying API sets a few things in stone at the time of Proxy creat
 laxy.func(generatorFn)(...args);    // generator returns a function or class 
 laxy.obj(generatorFn)(...args);     // generator returns an object
 laxy.arrow(genneratorFn)(...args);  // generator returns an arrow function
-laxy.class(generatorFn)(...args);   // generator IS a class function
+laxy.class(generatorFn)(...args);   // generator *is* a class function
 ``` 
 
 Each of the type hint options are described in detail below:
 
-  * `obj` - Indicates your generator function will return an object. If you actually do return a function, you won't be able to invoke it, but you will be able to access and invoke members of the function. Your proxy will respond to `typeof proxy` with `'object'` regardless of what the actual proxied type is.
+  * **`obj`** - Indicates your generator function will return an object. If you actually do return a function, you won't be able to invoke it, but you will be able to access and invoke members of the function. Your proxy will respond to `typeof proxy` with `'object'` regardless of what the actual proxied type is.
 
-  * `func` - The default. This is the only option that allows for invocation of `new` (meaning your generator function `returns` a constructor). It works for most situations (even if you aren't returning a function), with a few caveats:
+  * **`func`** - The default. This is the only option that allows for invocation of `new` (meaning your generator function *returns* a constructor). It works for most situations (even if you aren't returning a function), with a few caveats:
    
     * It will respond to `typeof` with `function`, regardless of the actual underlying type. 
     * `function`s have a *non*-enumerable, and non-configurable `prototype` property. The Proxy API insists that non-configurable properties are reflected in the proxy, so `Object.getOwnPropertyNames(proxy)` will include `'prototype'`. Note that the property is `non-enumerable`, so it won't show up in `Object.keys(proxy)`, etc.
   
-  * `arrow` - Represents an arrow function. It is invocable, but can't be invoked with `new`. Does not suffer from the forced `prototype` property like `func` does.
+  * **`arrow`** - Represents an arrow function. It is invocable, but can't be invoked with `new`. Does not suffer from the forced `prototype` property like `func` does.
   
-  * `class` - While all the other hints suggest what the *return type* of your generator function will be. The `class` hint declares that your generator function *is* a class function, and should be invoked with `new`. This should not be confused to mean your generator will return a class function (in that case, use `func`);
+  * **`class`** - While all the other hints suggest what the *return type* of your generator function will be. The `class` hint declares that your generator function *is* a class function, and should be invoked with `new`. This should not be confused to mean your generator will return a class function (in that case, use `func`);
 
 |   Hint    | `typeof proxy` | invocable |  with `new` |  Caveats                                                     |
 |-----------|:--------------:|:---------:|:-----------:|--------------------------------------------------------------|
